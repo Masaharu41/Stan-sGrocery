@@ -10,6 +10,32 @@ Option Compare Text
 
 
 Public Class StansGrocery
-    Dim groceryItems As New List(Of String)
+    Dim foodItems As New List(Of String)
+
+    Private Sub Loader(sender As Object, e As EventArgs) Handles Me.Load
+        CreateFoodArray()
+    End Sub
+
+    Sub CreateFoodArray()
+        Dim temp() As String
+        Dim groceryItems As String
+        Dim i As Integer = 0
+        Try
+            FileOpen(1, "..\..\Grocery.txt", OpenMode.Input)
+        Catch ex As Exception
+            FileOpen(2, "..\..\ErrorLog.txt", OpenMode.Append)
+            Write(2, CStr($"Error: {Err.Number}, {Err.Description} {vbNewLine}"))
+            FileClose(2)
+        End Try
+        Do Until EOF(1)
+            groceryItems = LineInput(1)
+            temp = Split(groceryItems, ",")
+            '
+            'temp = CStr(groceryItems)
+            ' i = i + 1
+        Loop
+
+        FileClose(1)
+    End Sub
 
 End Class
