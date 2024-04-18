@@ -10,7 +10,7 @@ Option Compare Text
 
 
 Public Class StansGrocery
-    Dim foodItems As New List(Of String)
+    Dim foodItems As New List(Of String())
 
     Private Sub Loader(sender As Object, e As EventArgs) Handles Me.Load
         CreateFoodArray()
@@ -30,11 +30,11 @@ Public Class StansGrocery
         Do Until EOF(1)
             groceryItems = LineInput(1)
             temp = Split(groceryItems, ",")
-            '
-            'temp = CStr(groceryItems)
-            ' i = i + 1
+            Me.foodItems.Add(temp)
         Loop
-
+        FileOpen(3, "..\..\TempOut.txt", OpenMode.Append)
+        Write(3, foodItems)
+        FileClose(3)
         FileClose(1)
     End Sub
 
