@@ -10,14 +10,14 @@ Option Compare Text
 
 
 Public Class StansGrocery
-    Dim foodItems As New List(Of String)
+    Dim foodItems(500, 2) As String
 
     Private Sub Loader(sender As Object, e As EventArgs) Handles Me.Load
         CreateFoodArray()
     End Sub
 
     Sub CreateFoodArray()
-        ' Dim temp() As String
+        Dim temp() As String
         Dim groceryItems As String
         Dim i As Integer = 0
         Try
@@ -29,28 +29,27 @@ Public Class StansGrocery
         End Try
         Do Until EOF(1)
             groceryItems = LineInput(1)
-            ' temp = Split(groceryItems, ",")
-            Me.foodItems.Add(groceryItems)
+            temp = Split(groceryItems, ",")
+            foodItems(i, 0) = temp(0)
+            foodItems(i, 1) = temp(1)
+            foodItems(i, 2) = temp(2)
+            i = i + 1
         Loop
-        'For i = LBound(foodItems) To UBound(foodItems)
-        '    DisplayListBox.Text = foodItems(i) & vbNewLine
-        'Next
-        ''FileOpen(3, "..\..\TempOut.txt", OpenMode.Append)
-        'Write(3, cstr(foodItems)
-        'FileClose(3)
+        ReDim Preserve foodItems(i, 2)
+
         FileClose(1)
     End Sub
 
-    Function SearchByName() As String
-        Dim temp() As String
-        Dim itemName$
+    'Function SearchByName() As String
+    '    Dim temp() As String
+    '    Dim itemName$
 
-        For LBound(foodItems) To UBound(foodItems)
+    '    For LBound(foodItems(, 2)) To UBound(foodItems)
 
-        Next
+    '    Next
 
 
 
-    End Function
+    'End Function
 
 End Class
