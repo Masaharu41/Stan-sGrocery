@@ -12,10 +12,13 @@ Option Compare Text
 Public Class StansGrocery
     Dim foodItems(500, 2) As String
 
+
     Private Sub Loader(sender As Object, e As EventArgs) Handles Me.Load
         CreateFoodArray()
     End Sub
+    'Function items() As Array
 
+    'End Function
     Sub CreateFoodArray()
         Dim temp() As String
         Dim groceryItems As String
@@ -27,29 +30,34 @@ Public Class StansGrocery
             Write(2, CStr($"Error: {Err.Number}, {Err.Description} {vbNewLine}"))
             FileClose(2)
         End Try
+
         Do Until EOF(1)
             groceryItems = LineInput(1)
             temp = Split(groceryItems, ",")
-            foodItems(i, 0) = temp(0)
-            foodItems(i, 1) = temp(1)
-            foodItems(i, 2) = temp(2)
+            Me.foodItems(i, 0) = temp(0)
+            Me.foodItems(i, 1) = temp(1)
+            Me.foodItems(i, 2) = temp(2)
             i = i + 1
         Loop
-        ReDim Preserve foodItems(i, 2)
+        'ReDim Preserve Me.foodItems(2, i)
 
         FileClose(1)
     End Sub
 
-    'Function SearchByName() As String
-    '    Dim temp() As String
-    '    Dim itemName$
+    Function SearchByName() As String
+        Dim temp() As String
+        Dim itemName$
 
-    '    For LBound(foodItems(, 2)) To UBound(foodItems)
+        For Each i In foodItems
+            temp(0) = foodItems(CInt(i), 0)
 
-    '    Next
+        Next
 
 
+        Return "hello"
+    End Function
 
-    'End Function
-
+    Private Sub SearchButton_Click(sender As Object, e As EventArgs) Handles SearchButton.Click
+        SearchByName()
+    End Sub
 End Class
