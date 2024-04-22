@@ -10,18 +10,32 @@ Option Compare Text
 
 
 Public Class StansGrocery
-    Dim foodItems(500, 2) As String
 
+    Dim food(2, 500) As String
 
     Private Sub Loader(sender As Object, e As EventArgs) Handles Me.Load
+        'RowIndex()
         CreateFoodArray()
     End Sub
-    'Function items() As Array
 
-    'End Function
+    Function RowIndex() As Integer
+        Dim i As Integer = 0
+        Try
+            FileOpen(1, "..\..\Grocery.txt", OpenMode.Input)
+        Catch ex As Exception
+            FileOpen(2, "..\..\ErrorLog.txt", OpenMode.Append)
+            Write(2, CStr($"Error: {Err.Number}, {Err.Description} {vbNewLine}"))
+            FileClose(2)
+        End Try
+        Do Until EOF(1)
+            i = i + 1
+        Loop
+        Return i
+    End Function
     Sub CreateFoodArray()
         Dim temp() As String
         Dim groceryItems As String
+        ' Dim tempGlobArray(2, 500) As String
         Dim i As Integer = 0
         Try
             FileOpen(1, "..\..\Grocery.txt", OpenMode.Input)
@@ -34,22 +48,32 @@ Public Class StansGrocery
         Do Until EOF(1)
             groceryItems = LineInput(1)
             temp = Split(groceryItems, ",")
-            Me.foodItems(i, 0) = temp(0)
-            Me.foodItems(i, 1) = temp(1)
-            Me.foodItems(i, 2) = temp(2)
+            food(0, i) = temp(0)
+            food(1, i) = temp(1)
+            food(2, i) = temp(2)
+            'tempGlobArray(0, i) = temp(0)
+            'tempGlobArray(1, i) = temp(1)
+            'tempGlobArray(2, i) = temp(2)
             i = i + 1
         Loop
-        'ReDim Preserve Me.foodItems(2, i)
-
+        ReDim Preserve food(2, i - 1)
+        ' ReDim Preserve tempGlobArray(2, i - 1)
+        'food(,) = tempGlobArray(,)
+        ' SearchTextBox.Text = food(2, 1)
         FileClose(1)
     End Sub
 
     Function SearchByName() As String
-        Dim temp() As String
+        ' Dim temp() As String
+        ' Dim e As Integer = 0
         Dim itemName$
+        'Dim endofArray As Integer
 
-        For Each i In foodItems
-            temp(0) = foodItems(CInt(i), 0)
+        For i = 0 To UBound(food, 2)
+
+            itemName = food(0, i)
+            DisplayListBox.Items.Add(itemName)
+
 
         Next
 
