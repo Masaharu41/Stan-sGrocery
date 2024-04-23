@@ -14,8 +14,8 @@ Public Class StansGrocery
     Dim food(2, 500) As String
 
     Private Sub Loader(sender As Object, e As EventArgs) Handles Me.Load
-
         CreateFoodArray()
+        ShowAllRadioButton.Checked = True
     End Sub
 
 
@@ -72,17 +72,47 @@ Public Class StansGrocery
                 Else
 
                 End If
-                DisplayListBox.Items.Add(itemName)
-
 
             Next
 
 
-            Return "Sorry we could not find your item"
+            Return $"Sorry we could not find {SearchTextBox.Text}"
         End If
     End Function
 
+    Sub DisplayItems()
+        DisplayListBox.Items.Clear()
+
+        For i = 0 To UBound(food, 2)
+            DisplayListBox.Items.Add(food(0, i))
+        Next
+    End Sub
+
+    Sub DisplayAisle()
+        DisplayListBox.Items.Clear()
+
+        For i = 0 To UBound(food, 2)
+            DisplayListBox.Items.Add(food(1, i))
+        Next
+    End Sub
+
+    Sub DisplayCat()
+        DisplayListBox.Items.Clear()
+
+        For i = 0 To UBound(food, 2)
+            DisplayListBox.Items.Add(food(2, i))
+        Next
+    End Sub
+
     Private Sub SearchButton_Click(sender As Object, e As EventArgs) Handles SearchButton.Click
         DisplayLabel.Text = SearchByName()
+    End Sub
+
+    Private Sub FilterByAisleRadioButton_CheckedChanged(sender As Object, e As EventArgs) Handles FilterByAisleRadioButton.CheckedChanged
+        DisplayAisle()
+    End Sub
+
+    Private Sub FilterByCategoryRadioButton_CheckedChanged(sender As Object, e As EventArgs) Handles FilterByCategoryRadioButton.CheckedChanged
+        DisplayCat()
     End Sub
 End Class

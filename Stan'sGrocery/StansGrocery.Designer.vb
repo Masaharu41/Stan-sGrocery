@@ -27,6 +27,11 @@ Partial Class StansGrocery
         Me.StoreLabel = New System.Windows.Forms.Label()
         Me.DisplayListBox = New System.Windows.Forms.ListBox()
         Me.DisplayLabel = New System.Windows.Forms.Label()
+        Me.ShowAllRadioButton = New System.Windows.Forms.RadioButton()
+        Me.FilterByAisleRadioButton = New System.Windows.Forms.RadioButton()
+        Me.FilterByCategoryRadioButton = New System.Windows.Forms.RadioButton()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'SearchTextBox
@@ -73,11 +78,57 @@ Partial Class StansGrocery
         Me.DisplayLabel.Size = New System.Drawing.Size(0, 25)
         Me.DisplayLabel.TabIndex = 4
         '
+        'ShowAllRadioButton
+        '
+        Me.ShowAllRadioButton.AutoSize = True
+        Me.ShowAllRadioButton.Location = New System.Drawing.Point(6, 38)
+        Me.ShowAllRadioButton.Name = "ShowAllRadioButton"
+        Me.ShowAllRadioButton.Size = New System.Drawing.Size(124, 29)
+        Me.ShowAllRadioButton.TabIndex = 5
+        Me.ShowAllRadioButton.TabStop = True
+        Me.ShowAllRadioButton.Text = "Show all"
+        Me.ShowAllRadioButton.UseVisualStyleBackColor = True
+        '
+        'FilterByAisleRadioButton
+        '
+        Me.FilterByAisleRadioButton.AutoSize = True
+        Me.FilterByAisleRadioButton.Location = New System.Drawing.Point(6, 82)
+        Me.FilterByAisleRadioButton.Name = "FilterByAisleRadioButton"
+        Me.FilterByAisleRadioButton.Size = New System.Drawing.Size(173, 29)
+        Me.FilterByAisleRadioButton.TabIndex = 6
+        Me.FilterByAisleRadioButton.TabStop = True
+        Me.FilterByAisleRadioButton.Text = "Filter by Aisle"
+        Me.FilterByAisleRadioButton.UseVisualStyleBackColor = True
+        '
+        'FilterByCategoryRadioButton
+        '
+        Me.FilterByCategoryRadioButton.AutoSize = True
+        Me.FilterByCategoryRadioButton.Location = New System.Drawing.Point(6, 126)
+        Me.FilterByCategoryRadioButton.Name = "FilterByCategoryRadioButton"
+        Me.FilterByCategoryRadioButton.Size = New System.Drawing.Size(213, 29)
+        Me.FilterByCategoryRadioButton.TabIndex = 7
+        Me.FilterByCategoryRadioButton.TabStop = True
+        Me.FilterByCategoryRadioButton.Text = "Filter by Category"
+        Me.FilterByCategoryRadioButton.UseVisualStyleBackColor = True
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.FilterByCategoryRadioButton)
+        Me.GroupBox1.Controls.Add(Me.ShowAllRadioButton)
+        Me.GroupBox1.Controls.Add(Me.FilterByAisleRadioButton)
+        Me.GroupBox1.Location = New System.Drawing.Point(127, 443)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(236, 175)
+        Me.GroupBox1.TabIndex = 8
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "GroupBox1"
+        '
         'StansGrocery
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1259, 926)
+        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.DisplayLabel)
         Me.Controls.Add(Me.DisplayListBox)
         Me.Controls.Add(Me.StoreLabel)
@@ -85,6 +136,8 @@ Partial Class StansGrocery
         Me.Controls.Add(Me.SearchTextBox)
         Me.Name = "StansGrocery"
         Me.Text = "Form1"
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -95,4 +148,8 @@ Partial Class StansGrocery
     Friend WithEvents StoreLabel As Label
     Friend WithEvents DisplayListBox As ListBox
     Friend WithEvents DisplayLabel As Label
+    Friend WithEvents ShowAllRadioButton As RadioButton
+    Friend WithEvents FilterByAisleRadioButton As RadioButton
+    Friend WithEvents FilterByCategoryRadioButton As RadioButton
+    Friend WithEvents GroupBox1 As GroupBox
 End Class
