@@ -26,6 +26,7 @@ Partial Class StansGrocery
         Me.SearchButton = New System.Windows.Forms.Button()
         Me.StoreLabel = New System.Windows.Forms.Label()
         Me.DisplayListBox = New System.Windows.Forms.ListBox()
+        Me.DisplayLabel = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'SearchTextBox
@@ -64,11 +65,20 @@ Partial Class StansGrocery
         Me.DisplayListBox.Size = New System.Drawing.Size(679, 804)
         Me.DisplayListBox.TabIndex = 3
         '
+        'DisplayLabel
+        '
+        Me.DisplayLabel.AutoSize = True
+        Me.DisplayLabel.Location = New System.Drawing.Point(161, 415)
+        Me.DisplayLabel.Name = "DisplayLabel"
+        Me.DisplayLabel.Size = New System.Drawing.Size(0, 25)
+        Me.DisplayLabel.TabIndex = 4
+        '
         'StansGrocery
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1259, 926)
+        Me.Controls.Add(Me.DisplayLabel)
         Me.Controls.Add(Me.DisplayListBox)
         Me.Controls.Add(Me.StoreLabel)
         Me.Controls.Add(Me.SearchButton)
@@ -84,4 +94,5 @@ Partial Class StansGrocery
     Friend WithEvents SearchButton As Button
     Friend WithEvents StoreLabel As Label
     Friend WithEvents DisplayListBox As ListBox
+    Friend WithEvents DisplayLabel As Label
 End Class

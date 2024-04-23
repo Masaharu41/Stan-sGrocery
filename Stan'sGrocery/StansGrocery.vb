@@ -22,7 +22,9 @@ Public Class StansGrocery
     Sub CreateFoodArray()
         Dim temp() As String
         Dim groceryItems As String
-
+        Dim itmName() As String
+        Dim aisleNum() As String
+        Dim itmCat() As String
         Dim i As Integer = 0
         Try
             FileOpen(1, "..\..\Grocery.txt", OpenMode.Input)
@@ -35,9 +37,15 @@ Public Class StansGrocery
         Do Until EOF(1)
             groceryItems = LineInput(1)
             temp = Split(groceryItems, ",")
-            food(0, i) = temp(0)
-            food(1, i) = temp(1)
-            food(2, i) = temp(2)
+            itmName = Split(temp(0), "$$ITM")
+            aisleNum = Split(temp(1), "##LOC")
+            itmCat = Split(temp(2), "%%CAT")
+            itmName = Split(itmName(1), "")
+            aisleNum = Split(aisleNum(1), "")
+            itmCat = Split(itmCat(1), "")
+            food(0, i) = itmName(0).Replace("""", "")
+            food(1, i) = aisleNum(0).Replace("""", "")
+            food(2, i) = itmCat(0).Replace("""", "")
             i = i + 1
         Loop
         ReDim Preserve food(2, i - 1)
@@ -49,27 +57,32 @@ Public Class StansGrocery
 
         Dim itemName As String
         Dim userInput As String
+        If String.IsNullOrEmpty(SearchTextBox.Text) Then
+            Return "Sorry, Please enter an item name"
+        Else
 
-        For i = 0 To UBound(food, 2)
+            For i = 0 To UBound(food, 2)
 
-            itemName = food(0, i)
-            '  itemName = Split(itemName, "$$ITM")
-            userInput = "$$ITM" & SearchTextBox.Text
-            If itemName = userInput Then
-                MsgBox("We found your Item")
-            Else
+                itemName = food(0, i)
+                '  itemName = Split(itemName, "$$ITM")
+                userInput = SearchTextBox.Text
+                If itemName = userInput Then
+                    MsgBox("We found your Item")
+                    Return $"You will find {food(0, i)} in aisle {food(1, i)} with the {food(2, i)}"
+                Else
 
-            End If
-            DisplayListBox.Items.Add(itemName)
-
-
-        Next
+                End If
+                DisplayListBox.Items.Add(itemName)
 
 
-        Return "hello"
+            Next
+
+
+            Return "Sorry we could not find your item"
+        End If
     End Function
 
     Private Sub SearchButton_Click(sender As Object, e As EventArgs) Handles SearchButton.Click
-        SearchByName()
+        DisplayLabel.Text = SearchByName()
     End Sub
 End Class
