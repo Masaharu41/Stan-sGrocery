@@ -7,8 +7,6 @@
 Option Explicit On
 Option Strict On
 Option Compare Text
-
-
 Public Class StansGrocery
 
     Dim food(2, 500) As String
@@ -54,28 +52,33 @@ Public Class StansGrocery
     End Sub
 
     Function SearchByName() As String
-
         Dim itemName As String
         Dim userInput As String
+        Dim userInputAisle As Integer
         If String.IsNullOrEmpty(SearchTextBox.Text) Then
             Return "Sorry, Please enter an item name"
+        ElseIf SearchTextBox.Text = "zzz" Then
+            Me.Close()
         Else
 
             For i = 0 To UBound(food, 2)
-
                 itemName = food(0, i)
-                '  itemName = Split(itemName, "$$ITM")
                 userInput = SearchTextBox.Text
                 If itemName = userInput Then
                     MsgBox("We found your Item")
                     Return $"You will find {food(0, i)} in aisle {food(1, i)} with the {food(2, i)}"
                 Else
+                    'Try
+                    '    userInputAisle = CInt(SearchTextBox.Text)
+                    '    For  = 0 To UBound(food, 2)
 
+                    '    Next
+                    'Catch ex As Exception
+
+                    'End Try
                 End If
 
             Next
-
-
             Return $"Sorry we could not find {SearchTextBox.Text}"
         End If
     End Function
