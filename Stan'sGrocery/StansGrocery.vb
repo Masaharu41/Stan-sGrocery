@@ -55,6 +55,8 @@ Public Class StansGrocery
         Dim itemName As String
         Dim userInput As String
         Dim userInputAisle As Integer
+        DisplayListBox.Items.Clear()
+
         If String.IsNullOrEmpty(SearchTextBox.Text) Then
             Return "Sorry, Please enter an item name"
         ElseIf SearchTextBox.Text = "zzz" Then
@@ -64,23 +66,31 @@ Public Class StansGrocery
             For i = 0 To UBound(food, 2)
                 itemName = food(0, i)
                 userInput = SearchTextBox.Text
-                If itemName = userInput Then
+                If itemName Like userInput Then
                     MsgBox("We found your Item")
+                    DisplayListBox.Items.Add(itemName)
                     Return $"You will find {food(0, i)} in aisle {food(1, i)} with the {food(2, i)}"
                 Else
-                    'Try
-                    '    userInputAisle = CInt(SearchTextBox.Text)
-                    '    For  = 0 To UBound(food, 2)
-
-                    '    Next
-                    'Catch ex As Exception
-
-                    'End Try
                 End If
 
             Next
-            Return $"Sorry we could not find {SearchTextBox.Text}"
+
+            Try
+                For e = 0 To UBound(food, 2)
+                    userInputAisle = CInt(SearchTextBox.Text)
+                    If userInputAisle = CInt(food(1, e)) Then
+                        DisplayListBox.Items.Add(food(0, e))
+                    Else
+
+                    End If
+                Next
+                Return "Here are the Aisles"
+            Catch ex As Exception
+
+            End Try
         End If
+        Return $"Sorry we could not find {SearchTextBox.Text}"
+
     End Function
 
     Sub DisplayItems()
@@ -116,7 +126,7 @@ Public Class StansGrocery
         DisplayListBox.Items.Clear()
 
         For i = 0 To UBound(food, 2)
-            'For e = 0 To UBound(DisplayListBox.Items.)
+
             If DisplayListBox.Items.Contains(food(2, i)) Then
             Else
                 If String.IsNullOrEmpty(food(2, i)) Then
@@ -124,7 +134,7 @@ Public Class StansGrocery
                     DisplayListBox.Items.Add(food(2, i))
                 End If
             End If
-            ' Next
+
         Next
 
     End Sub
