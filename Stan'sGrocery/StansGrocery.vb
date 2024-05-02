@@ -115,9 +115,10 @@ Public Class StansGrocery
 
 
 
-    Sub DisplayItems()
-        DisplayListBox.Items.Clear()
-
+    Sub DisplayItem(clear As Boolean)
+        If clear Then
+            DisplayListBox.Items.Clear()
+        End If
         For i = 0 To UBound(food, 2)
             If DisplayListBox.Items.Contains(food(0, i)) Then
             Else
@@ -130,8 +131,10 @@ Public Class StansGrocery
         DisplayListBox.Sorted = True
     End Sub
 
-    Sub DisplayAisle()
-        DisplayListBox.Items.Clear()
+    Sub DisplayAisle(clear As Boolean)
+        If clear Then
+            DisplayListBox.Items.Clear()
+        End If
 
         For i = 0 To UBound(food, 2)
             If DisplayListBox.Items.Contains(food(1, i)) Then
@@ -146,8 +149,10 @@ Public Class StansGrocery
         DisplayListBox.Sorted = True
     End Sub
 
-    Sub DisplayCat()
-        DisplayListBox.Items.Clear()
+    Sub DisplayCat(clear As Boolean)
+        If clear Then
+            DisplayListBox.Items.Clear()
+        End If
 
         For i = 0 To UBound(food, 2)
 
@@ -168,15 +173,20 @@ Public Class StansGrocery
     End Sub
 
     Private Sub FilterByAisleRadioButton_CheckedChanged(sender As Object, e As EventArgs) Handles FilterByAisleRadioButton.CheckedChanged
-        DisplayAisle()
+        DisplayAisle(True)
     End Sub
 
     Private Sub FilterByCategoryRadioButton_CheckedChanged(sender As Object, e As EventArgs) Handles FilterByCategoryRadioButton.CheckedChanged
-        DisplayCat()
+        DisplayCat(True)
     End Sub
 
     Private Sub ShowAllRadioButton_CheckedChanged(sender As Object, e As EventArgs) Handles ShowAllRadioButton.CheckedChanged
-        DisplayItems()
+        DisplayItem(False)
+        DisplayCat(False)
+        DisplayAisle(False)
     End Sub
 
+    Private Sub FilterByItemsRadioButton_CheckedChanged(sender As Object, e As EventArgs) Handles FilterByItemsRadioButton.CheckedChanged
+        DisplayItem(True)
+    End Sub
 End Class

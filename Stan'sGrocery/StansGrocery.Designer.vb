@@ -31,6 +31,7 @@ Partial Class StansGrocery
         Me.FilterByAisleRadioButton = New System.Windows.Forms.RadioButton()
         Me.FilterByCategoryRadioButton = New System.Windows.Forms.RadioButton()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.FilterByItemsRadioButton = New System.Windows.Forms.RadioButton()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -92,7 +93,7 @@ Partial Class StansGrocery
         'FilterByAisleRadioButton
         '
         Me.FilterByAisleRadioButton.AutoSize = True
-        Me.FilterByAisleRadioButton.Location = New System.Drawing.Point(6, 82)
+        Me.FilterByAisleRadioButton.Location = New System.Drawing.Point(6, 138)
         Me.FilterByAisleRadioButton.Name = "FilterByAisleRadioButton"
         Me.FilterByAisleRadioButton.Size = New System.Drawing.Size(173, 29)
         Me.FilterByAisleRadioButton.TabIndex = 6
@@ -103,7 +104,7 @@ Partial Class StansGrocery
         'FilterByCategoryRadioButton
         '
         Me.FilterByCategoryRadioButton.AutoSize = True
-        Me.FilterByCategoryRadioButton.Location = New System.Drawing.Point(6, 126)
+        Me.FilterByCategoryRadioButton.Location = New System.Drawing.Point(6, 183)
         Me.FilterByCategoryRadioButton.Name = "FilterByCategoryRadioButton"
         Me.FilterByCategoryRadioButton.Size = New System.Drawing.Size(213, 29)
         Me.FilterByCategoryRadioButton.TabIndex = 7
@@ -113,15 +114,27 @@ Partial Class StansGrocery
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.FilterByItemsRadioButton)
         Me.GroupBox1.Controls.Add(Me.FilterByCategoryRadioButton)
         Me.GroupBox1.Controls.Add(Me.ShowAllRadioButton)
         Me.GroupBox1.Controls.Add(Me.FilterByAisleRadioButton)
-        Me.GroupBox1.Location = New System.Drawing.Point(127, 443)
+        Me.GroupBox1.Location = New System.Drawing.Point(123, 581)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(236, 175)
+        Me.GroupBox1.Size = New System.Drawing.Size(236, 246)
         Me.GroupBox1.TabIndex = 8
         Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "GroupBox1"
+        Me.GroupBox1.Text = "Filter Items by"
+        '
+        'FilterByItemsRadioButton
+        '
+        Me.FilterByItemsRadioButton.AutoSize = True
+        Me.FilterByItemsRadioButton.Location = New System.Drawing.Point(6, 73)
+        Me.FilterByItemsRadioButton.Name = "FilterByItemsRadioButton"
+        Me.FilterByItemsRadioButton.Size = New System.Drawing.Size(177, 29)
+        Me.FilterByItemsRadioButton.TabIndex = 8
+        Me.FilterByItemsRadioButton.TabStop = True
+        Me.FilterByItemsRadioButton.Text = "Filter by Items"
+        Me.FilterByItemsRadioButton.UseVisualStyleBackColor = True
         '
         'StansGrocery
         '
@@ -152,4 +165,5 @@ Partial Class StansGrocery
     Friend WithEvents FilterByAisleRadioButton As RadioButton
     Friend WithEvents FilterByCategoryRadioButton As RadioButton
     Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents FilterByItemsRadioButton As RadioButton
 End Class
