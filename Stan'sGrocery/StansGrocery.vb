@@ -56,6 +56,7 @@ Public Class StansGrocery
         Dim catName As String
         Dim userInput As String
         Dim userInputAisle As Integer
+        DisplayLabel.Text = Nothing
         DisplayListBox.Items.Clear()
 
         If String.IsNullOrEmpty(SearchTextBox.Text) Then
@@ -112,6 +113,8 @@ Public Class StansGrocery
 
     End Function
 
+
+
     Sub DisplayItems()
         DisplayListBox.Items.Clear()
 
@@ -124,6 +127,7 @@ Public Class StansGrocery
                 End If
             End If
         Next
+        DisplayListBox.Sorted = True
     End Sub
 
     Sub DisplayAisle()
@@ -139,6 +143,7 @@ Public Class StansGrocery
 
             End If
         Next
+        DisplayListBox.Sorted = True
     End Sub
 
     Sub DisplayCat()
@@ -155,7 +160,7 @@ Public Class StansGrocery
             End If
 
         Next
-
+        DisplayListBox.Sorted = True
     End Sub
 
     Private Sub SearchButton_Click(sender As Object, e As EventArgs) Handles SearchButton.Click
