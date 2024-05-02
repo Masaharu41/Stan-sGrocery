@@ -83,10 +83,9 @@ Public Class StansGrocery
             Try
                 For e = 0 To UBound(food, 2)
                     userInputAisle = CInt(SearchTextBox.Text)
-                    If userInputAisle = CInt(food(1, e)) Then
+                    If String.IsNullOrEmpty(CStr(food(1, e))) Then
+                    ElseIf userInputAisle = CInt(food(1, e)) Then
                         DisplayListBox.Items.Add(food(0, e))
-                    Else
-
                     End If
                 Next
                 Return "Here are the Aisles"
