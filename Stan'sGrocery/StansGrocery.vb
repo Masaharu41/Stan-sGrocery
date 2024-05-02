@@ -69,7 +69,12 @@ Public Class StansGrocery
                 If itemName Like userInput Then
                     MsgBox("We found your Item")
                     DisplayListBox.Items.Add(itemName)
-                    Return $"You will find {food(0, i)} in aisle {food(1, i)} with the {food(2, i)}"
+                    If String.IsNullOrEmpty(food(0, i)) And String.IsNullOrEmpty(CStr(food(1, i))) And String.IsNullOrEmpty(food(2, i)) Then
+                        Return "Sorry, your item does not have known data"
+                    Else
+
+                        Return $"You will find {food(0, i)} in aisle {food(1, i)} with the {food(2, i)}"
+                    End If
                 Else
                 End If
 
