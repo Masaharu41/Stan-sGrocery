@@ -53,6 +53,7 @@ Public Class StansGrocery
 
     Function SearchByName() As String
         Dim itemName As String
+        Dim catName As String
         Dim userInput As String
         Dim userInputAisle As Integer
         DisplayListBox.Items.Clear()
@@ -92,7 +93,21 @@ Public Class StansGrocery
             Catch ex As Exception
 
             End Try
+
+            For g = 0 To UBound(food, 2)
+                catName = food(2, g)
+                itemName = SearchTextBox.Text
+                If catName Like itemName Then
+                    DisplayListBox.Items.Add(food(0, g))
+                Else
+                End If
+            Next
+            Return "These are the available categories of items"
+
+
+
         End If
+
         Return $"Sorry we could not find {SearchTextBox.Text}"
 
     End Function
