@@ -45,7 +45,8 @@ Partial Class StansGrocery
         '
         'SearchButton
         '
-        Me.SearchButton.Location = New System.Drawing.Point(166, 232)
+        Me.SearchButton.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.SearchButton.Location = New System.Drawing.Point(179, 222)
         Me.SearchButton.Name = "SearchButton"
         Me.SearchButton.Size = New System.Drawing.Size(148, 77)
         Me.SearchButton.TabIndex = 1
@@ -74,10 +75,11 @@ Partial Class StansGrocery
         'DisplayLabel
         '
         Me.DisplayLabel.AutoSize = True
-        Me.DisplayLabel.Location = New System.Drawing.Point(161, 415)
+        Me.DisplayLabel.Location = New System.Drawing.Point(118, 424)
         Me.DisplayLabel.Name = "DisplayLabel"
-        Me.DisplayLabel.Size = New System.Drawing.Size(0, 25)
+        Me.DisplayLabel.Size = New System.Drawing.Size(58, 25)
         Me.DisplayLabel.TabIndex = 4
+        Me.DisplayLabel.Text = "View"
         '
         'ShowAllRadioButton
         '
@@ -147,6 +149,7 @@ Partial Class StansGrocery
         Me.Controls.Add(Me.StoreLabel)
         Me.Controls.Add(Me.SearchButton)
         Me.Controls.Add(Me.SearchTextBox)
+        Me.KeyPreview = True
         Me.Name = "StansGrocery"
         Me.Text = "Form1"
         Me.GroupBox1.ResumeLayout(False)

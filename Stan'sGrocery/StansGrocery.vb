@@ -7,11 +7,13 @@
 Option Explicit On
 Option Strict On
 Option Compare Text
+
 Public Class StansGrocery
 
     Dim food(2, 500) As String
 
     Private Sub Loader(sender As Object, e As EventArgs) Handles Me.Load
+        DisplayLabel.Text = Nothing
         CreateFoodArray()
         ShowAllRadioButton.Checked = True
     End Sub
@@ -56,6 +58,7 @@ Public Class StansGrocery
         Dim catName As String
         Dim userInput As String
         Dim userInputAisle As Integer
+        Dim catFound As Boolean = False
         DisplayLabel.Text = Nothing
         DisplayListBox.Items.Clear()
 
@@ -100,10 +103,14 @@ Public Class StansGrocery
                 itemName = SearchTextBox.Text
                 If catName Like itemName Then
                     DisplayListBox.Items.Add(food(0, g))
+                    catFound = True
                 Else
                 End If
             Next
-            Return "These are the available categories of items"
+            If catFound Then
+
+                Return "These are the available categories of items"
+            End If
 
 
 
@@ -188,5 +195,11 @@ Public Class StansGrocery
 
     Private Sub FilterByItemsRadioButton_CheckedChanged(sender As Object, e As EventArgs) Handles FilterByItemsRadioButton.CheckedChanged
         DisplayItem(True)
+    End Sub
+
+    Private Sub StansGrocery_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            SearchByName()
+        End If
     End Sub
 End Class
