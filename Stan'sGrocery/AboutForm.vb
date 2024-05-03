@@ -1,5 +1,6 @@
 ﻿Public Class AboutForm
-    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
-
+    Private Sub AboutButton_Click(sender As Object, e As EventArgs) Handles AboutButton.Click
+        Me.Hide()
+        StansGrocery.Show()
     End Sub
 End Class

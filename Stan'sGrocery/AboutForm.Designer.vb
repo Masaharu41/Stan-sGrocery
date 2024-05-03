@@ -23,6 +23,7 @@ Partial Class AboutForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.AboutButton = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label1
@@ -35,11 +36,21 @@ Partial Class AboutForm
         Me.Label1.Text = "Welcome to Stan's Grocery" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "This search engine has been developed to give" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "our cus" &
     "tomers greater convience "
         '
+        'AboutButton
+        '
+        Me.AboutButton.Location = New System.Drawing.Point(581, 328)
+        Me.AboutButton.Name = "AboutButton"
+        Me.AboutButton.Size = New System.Drawing.Size(152, 61)
+        Me.AboutButton.TabIndex = 1
+        Me.AboutButton.Text = "Ok"
+        Me.AboutButton.UseVisualStyleBackColor = True
+        '
         'AboutForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.AboutButton)
         Me.Controls.Add(Me.Label1)
         Me.Name = "AboutForm"
         Me.Text = "Form1"
@@ -49,4 +60,5 @@ Partial Class AboutForm
     End Sub
 
     Friend WithEvents Label1 As Label
+    Friend WithEvents AboutButton As Button
 End Class
