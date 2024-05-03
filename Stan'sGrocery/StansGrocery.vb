@@ -13,8 +13,8 @@ Public Class StansGrocery
     Dim food(2, 500) As String
 
     Private Sub Loader(sender As Object, e As EventArgs) Handles Me.Load
-        DisplayLabel.Text = Nothing
         CreateFoodArray()
+        DisplayLabel.Text = Nothing
         ShowAllRadioButton.Checked = True
     End Sub
 
@@ -208,4 +208,7 @@ Public Class StansGrocery
         AboutForm.Show()
     End Sub
 
+    Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
+        Me.Close()
+    End Sub
 End Class

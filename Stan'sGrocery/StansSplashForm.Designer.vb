@@ -23,6 +23,7 @@ Partial Class StansSplashForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(StansSplashForm))
         Me.SplashTimer = New System.Windows.Forms.Timer(Me.components)
         Me.SuspendLayout()
         '
@@ -35,8 +36,13 @@ Partial Class StansSplashForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.BackColor = System.Drawing.SystemColors.ControlDark
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.ClientSize = New System.Drawing.Size(946, 736)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "StansSplashForm"
+        Me.ShowIcon = False
         Me.Text = "Form1"
         Me.ResumeLayout(False)
 
