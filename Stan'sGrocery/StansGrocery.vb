@@ -57,7 +57,9 @@ Public Class StansGrocery
         Dim itemName As String
         Dim catName As String
         Dim userInput As String
+        Dim userMsg As String
         Dim userInputAisle As Integer
+        Dim passed As Boolean = False
         Dim catFound As Boolean = False
         DisplayLabel.Text = Nothing
         DisplayListBox.Items.Clear()
@@ -75,10 +77,11 @@ Public Class StansGrocery
                     MsgBox("We found your Item")
                     DisplayListBox.Items.Add(itemName)
                     If String.IsNullOrEmpty(food(0, i)) And String.IsNullOrEmpty(CStr(food(1, i))) And String.IsNullOrEmpty(food(2, i)) Then
+
                         Return "Sorry, your item does not have known data"
                     Else
-
-                        Return $"You will find {food(0, i)} in aisle {food(1, i)} with the {food(2, i)}"
+                        passed = True
+                        userMsg = $"You will find {food(0, i)} in aisle {food(1, i)} with the {food(2, i)}"
                     End If
                 Else
                 End If
@@ -90,10 +93,15 @@ Public Class StansGrocery
                     userInputAisle = CInt(SearchTextBox.Text)
                     If String.IsNullOrEmpty(CStr(food(1, e))) Then
                     ElseIf userInputAisle = CInt(food(1, e)) Then
-                        DisplayListBox.Items.Add(food(0, e))
+                        passed = True
+                        If String.IsNullOrEmpty(food(0, e)) Then
+                        Else
+
+                            DisplayListBox.Items.Add(food(0, e))
+                        End If
                     End If
                 Next
-                Return "Here are the Aisles"
+                userMsg = userMsg & "Here are the Aisles"
             Catch ex As Exception
 
             End Try
@@ -103,20 +111,25 @@ Public Class StansGrocery
                 itemName = SearchTextBox.Text
                 If catName Like itemName Then
                     DisplayListBox.Items.Add(food(0, g))
+                    passed = True
                     catFound = True
                 Else
                 End If
             Next
             If catFound Then
 
-                Return "These are the available categories of items"
+                userMsg = userMsg & "These are the available categories of items"
             End If
 
 
 
         End If
+        If passed Then
+            Return userMsg
+        Else
 
-        Return $"Sorry we could not find {SearchTextBox.Text}"
+            Return $"Sorry we could not find {SearchTextBox.Text}"
+        End If
 
     End Function
 
