@@ -74,7 +74,6 @@ Public Class StansGrocery
                 itemName = food(0, i)
                 userInput = SearchTextBox.Text
                 If itemName Like userInput Then
-                    MsgBox("We found your Item")
                     DisplayListBox.Items.Add(itemName)
                     If String.IsNullOrEmpty(food(0, i)) And String.IsNullOrEmpty(CStr(food(1, i))) And String.IsNullOrEmpty(food(2, i)) Then
 

@@ -23,6 +23,7 @@ Partial Class StansGrocery
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(StansGrocery))
         Me.SearchTextBox = New System.Windows.Forms.TextBox()
         Me.SearchButton = New System.Windows.Forms.Button()
         Me.StoreLabel = New System.Windows.Forms.Label()
@@ -50,7 +51,7 @@ Partial Class StansGrocery
         'SearchTextBox
         '
         Me.SearchTextBox.Font = New System.Drawing.Font("Liberation Serif", 10.875!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SearchTextBox.Location = New System.Drawing.Point(166, 175)
+        Me.SearchTextBox.Location = New System.Drawing.Point(520, 182)
         Me.SearchTextBox.Name = "SearchTextBox"
         Me.SearchTextBox.Size = New System.Drawing.Size(177, 41)
         Me.SearchTextBox.TabIndex = 0
@@ -58,7 +59,7 @@ Partial Class StansGrocery
         'SearchButton
         '
         Me.SearchButton.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.SearchButton.Location = New System.Drawing.Point(179, 222)
+        Me.SearchButton.Location = New System.Drawing.Point(533, 229)
         Me.SearchButton.Name = "SearchButton"
         Me.SearchButton.Size = New System.Drawing.Size(148, 77)
         Me.SearchButton.TabIndex = 1
@@ -67,9 +68,10 @@ Partial Class StansGrocery
         '
         'StoreLabel
         '
+        Me.StoreLabel.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.StoreLabel.AutoSize = True
         Me.StoreLabel.Font = New System.Drawing.Font("Liberation Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.StoreLabel.Location = New System.Drawing.Point(160, 119)
+        Me.StoreLabel.Location = New System.Drawing.Point(514, 126)
         Me.StoreLabel.Name = "StoreLabel"
         Me.StoreLabel.Size = New System.Drawing.Size(199, 36)
         Me.StoreLabel.TabIndex = 2
@@ -77,17 +79,21 @@ Partial Class StansGrocery
         '
         'DisplayListBox
         '
+        Me.DisplayListBox.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DisplayListBox.FormattingEnabled = True
         Me.DisplayListBox.ItemHeight = 25
-        Me.DisplayListBox.Location = New System.Drawing.Point(553, 45)
+        Me.DisplayListBox.Location = New System.Drawing.Point(12, 409)
         Me.DisplayListBox.Name = "DisplayListBox"
-        Me.DisplayListBox.Size = New System.Drawing.Size(639, 629)
+        Me.DisplayListBox.Size = New System.Drawing.Size(1179, 279)
         Me.DisplayListBox.TabIndex = 3
         '
         'DisplayLabel
         '
+        Me.DisplayLabel.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DisplayLabel.AutoSize = True
-        Me.DisplayLabel.Location = New System.Drawing.Point(86, 322)
+        Me.DisplayLabel.Location = New System.Drawing.Point(427, 325)
         Me.DisplayLabel.Name = "DisplayLabel"
         Me.DisplayLabel.Size = New System.Drawing.Size(58, 25)
         Me.DisplayLabel.TabIndex = 4
@@ -128,11 +134,12 @@ Partial Class StansGrocery
         '
         'GroupBox1
         '
+        Me.GroupBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox1.Controls.Add(Me.FilterByItemsRadioButton)
         Me.GroupBox1.Controls.Add(Me.FilterByCategoryRadioButton)
         Me.GroupBox1.Controls.Add(Me.ShowAllRadioButton)
         Me.GroupBox1.Controls.Add(Me.FilterByAisleRadioButton)
-        Me.GroupBox1.Location = New System.Drawing.Point(123, 382)
+        Me.GroupBox1.Location = New System.Drawing.Point(908, 109)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(236, 190)
         Me.GroupBox1.TabIndex = 8
@@ -165,7 +172,7 @@ Partial Class StansGrocery
         '
         Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SearchToolStripMenuItem, Me.ExitToolStripMenuItem})
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
-        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(71, 36)
+        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(71, 44)
         Me.FileToolStripMenuItem.Text = "File"
         '
         'SearchToolStripMenuItem
@@ -184,7 +191,7 @@ Partial Class StansGrocery
         '
         Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AboutToolStripMenuItem})
         Me.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
-        Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(84, 36)
+        Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(84, 44)
         Me.HelpToolStripMenuItem.Text = "Help"
         '
         'AboutToolStripMenuItem
@@ -225,6 +232,7 @@ Partial Class StansGrocery
         Me.Controls.Add(Me.SearchButton)
         Me.Controls.Add(Me.SearchTextBox)
         Me.Controls.Add(Me.StansGroceryMenuStrip)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
         Me.MainMenuStrip = Me.StansGroceryMenuStrip
         Me.Name = "StansGrocery"
