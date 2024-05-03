@@ -175,7 +175,7 @@ Public Class StansGrocery
         DisplayListBox.Sorted = True
     End Sub
 
-    Private Sub SearchButton_Click(sender As Object, e As EventArgs) Handles SearchButton.Click
+    Private Sub SearchButton_Click(sender As Object, e As EventArgs) Handles SearchButton.Click, SearchToolStripMenuItem.Click, SearchToolStripMenuItem1.Click
         DisplayLabel.Text = SearchByName()
     End Sub
 
@@ -208,7 +208,9 @@ Public Class StansGrocery
         AboutForm.Show()
     End Sub
 
-    Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
+    Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click, ExitToolStripMenuItem1.Click
         Me.Close()
     End Sub
+
+
 End Class

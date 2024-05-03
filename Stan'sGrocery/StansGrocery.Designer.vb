@@ -22,6 +22,7 @@ Partial Class StansGrocery
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.SearchTextBox = New System.Windows.Forms.TextBox()
         Me.SearchButton = New System.Windows.Forms.Button()
         Me.StoreLabel = New System.Windows.Forms.Label()
@@ -32,14 +33,18 @@ Partial Class StansGrocery
         Me.FilterByCategoryRadioButton = New System.Windows.Forms.RadioButton()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.FilterByItemsRadioButton = New System.Windows.Forms.RadioButton()
-        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.StansGroceryMenuStrip = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SearchToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.StansGroceryContextMenuStrip = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.SearchToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ExitToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.GroupBox1.SuspendLayout()
-        Me.MenuStrip1.SuspendLayout()
+        Me.StansGroceryMenuStrip.SuspendLayout()
+        Me.StansGroceryContextMenuStrip.SuspendLayout()
         Me.SuspendLayout()
         '
         'SearchTextBox
@@ -76,13 +81,13 @@ Partial Class StansGrocery
         Me.DisplayListBox.ItemHeight = 25
         Me.DisplayListBox.Location = New System.Drawing.Point(553, 45)
         Me.DisplayListBox.Name = "DisplayListBox"
-        Me.DisplayListBox.Size = New System.Drawing.Size(679, 804)
+        Me.DisplayListBox.Size = New System.Drawing.Size(639, 629)
         Me.DisplayListBox.TabIndex = 3
         '
         'DisplayLabel
         '
         Me.DisplayLabel.AutoSize = True
-        Me.DisplayLabel.Location = New System.Drawing.Point(118, 424)
+        Me.DisplayLabel.Location = New System.Drawing.Point(86, 322)
         Me.DisplayLabel.Name = "DisplayLabel"
         Me.DisplayLabel.Size = New System.Drawing.Size(58, 25)
         Me.DisplayLabel.TabIndex = 4
@@ -102,7 +107,7 @@ Partial Class StansGrocery
         'FilterByAisleRadioButton
         '
         Me.FilterByAisleRadioButton.AutoSize = True
-        Me.FilterByAisleRadioButton.Location = New System.Drawing.Point(6, 138)
+        Me.FilterByAisleRadioButton.Location = New System.Drawing.Point(6, 108)
         Me.FilterByAisleRadioButton.Name = "FilterByAisleRadioButton"
         Me.FilterByAisleRadioButton.Size = New System.Drawing.Size(173, 29)
         Me.FilterByAisleRadioButton.TabIndex = 6
@@ -113,7 +118,7 @@ Partial Class StansGrocery
         'FilterByCategoryRadioButton
         '
         Me.FilterByCategoryRadioButton.AutoSize = True
-        Me.FilterByCategoryRadioButton.Location = New System.Drawing.Point(6, 183)
+        Me.FilterByCategoryRadioButton.Location = New System.Drawing.Point(6, 143)
         Me.FilterByCategoryRadioButton.Name = "FilterByCategoryRadioButton"
         Me.FilterByCategoryRadioButton.Size = New System.Drawing.Size(213, 29)
         Me.FilterByCategoryRadioButton.TabIndex = 7
@@ -127,9 +132,9 @@ Partial Class StansGrocery
         Me.GroupBox1.Controls.Add(Me.FilterByCategoryRadioButton)
         Me.GroupBox1.Controls.Add(Me.ShowAllRadioButton)
         Me.GroupBox1.Controls.Add(Me.FilterByAisleRadioButton)
-        Me.GroupBox1.Location = New System.Drawing.Point(123, 581)
+        Me.GroupBox1.Location = New System.Drawing.Point(123, 382)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(236, 246)
+        Me.GroupBox1.Size = New System.Drawing.Size(236, 190)
         Me.GroupBox1.TabIndex = 8
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Filter Items by"
@@ -145,16 +150,16 @@ Partial Class StansGrocery
         Me.FilterByItemsRadioButton.Text = "Filter by Items"
         Me.FilterByItemsRadioButton.UseVisualStyleBackColor = True
         '
-        'MenuStrip1
+        'StansGroceryMenuStrip
         '
-        Me.MenuStrip1.GripMargin = New System.Windows.Forms.Padding(2, 2, 0, 2)
-        Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(32, 32)
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.HelpToolStripMenuItem})
-        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1259, 40)
-        Me.MenuStrip1.TabIndex = 9
-        Me.MenuStrip1.Text = "MenuStrip1"
+        Me.StansGroceryMenuStrip.GripMargin = New System.Windows.Forms.Padding(2, 2, 0, 2)
+        Me.StansGroceryMenuStrip.ImageScalingSize = New System.Drawing.Size(32, 32)
+        Me.StansGroceryMenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.HelpToolStripMenuItem})
+        Me.StansGroceryMenuStrip.Location = New System.Drawing.Point(0, 0)
+        Me.StansGroceryMenuStrip.Name = "StansGroceryMenuStrip"
+        Me.StansGroceryMenuStrip.Size = New System.Drawing.Size(1203, 40)
+        Me.StansGroceryMenuStrip.TabIndex = 9
+        Me.StansGroceryMenuStrip.Text = "MenuStrip1"
         '
         'FileToolStripMenuItem
         '
@@ -166,13 +171,13 @@ Partial Class StansGrocery
         'SearchToolStripMenuItem
         '
         Me.SearchToolStripMenuItem.Name = "SearchToolStripMenuItem"
-        Me.SearchToolStripMenuItem.Size = New System.Drawing.Size(359, 44)
+        Me.SearchToolStripMenuItem.Size = New System.Drawing.Size(218, 44)
         Me.SearchToolStripMenuItem.Text = "Search"
         '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(359, 44)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(218, 44)
         Me.ExitToolStripMenuItem.Text = "Exit"
         '
         'HelpToolStripMenuItem
@@ -185,29 +190,50 @@ Partial Class StansGrocery
         'AboutToolStripMenuItem
         '
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(359, 44)
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(212, 44)
         Me.AboutToolStripMenuItem.Text = "About"
+        '
+        'StansGroceryContextMenuStrip
+        '
+        Me.StansGroceryContextMenuStrip.ImageScalingSize = New System.Drawing.Size(32, 32)
+        Me.StansGroceryContextMenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SearchToolStripMenuItem1, Me.ExitToolStripMenuItem1})
+        Me.StansGroceryContextMenuStrip.Name = "StansGroceryContextMenuStrip"
+        Me.StansGroceryContextMenuStrip.Size = New System.Drawing.Size(160, 80)
+        '
+        'SearchToolStripMenuItem1
+        '
+        Me.SearchToolStripMenuItem1.Name = "SearchToolStripMenuItem1"
+        Me.SearchToolStripMenuItem1.Size = New System.Drawing.Size(159, 38)
+        Me.SearchToolStripMenuItem1.Text = "Search"
+        '
+        'ExitToolStripMenuItem1
+        '
+        Me.ExitToolStripMenuItem1.Name = "ExitToolStripMenuItem1"
+        Me.ExitToolStripMenuItem1.Size = New System.Drawing.Size(159, 38)
+        Me.ExitToolStripMenuItem1.Text = "Exit"
         '
         'StansGrocery
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1259, 926)
+        Me.ClientSize = New System.Drawing.Size(1203, 700)
+        Me.ContextMenuStrip = Me.StansGroceryContextMenuStrip
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.DisplayLabel)
         Me.Controls.Add(Me.DisplayListBox)
         Me.Controls.Add(Me.StoreLabel)
         Me.Controls.Add(Me.SearchButton)
         Me.Controls.Add(Me.SearchTextBox)
-        Me.Controls.Add(Me.MenuStrip1)
+        Me.Controls.Add(Me.StansGroceryMenuStrip)
         Me.KeyPreview = True
-        Me.MainMenuStrip = Me.MenuStrip1
+        Me.MainMenuStrip = Me.StansGroceryMenuStrip
         Me.Name = "StansGrocery"
         Me.Text = "Form1"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        Me.MenuStrip1.ResumeLayout(False)
-        Me.MenuStrip1.PerformLayout()
+        Me.StansGroceryMenuStrip.ResumeLayout(False)
+        Me.StansGroceryMenuStrip.PerformLayout()
+        Me.StansGroceryContextMenuStrip.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -223,10 +249,13 @@ Partial Class StansGrocery
     Friend WithEvents FilterByCategoryRadioButton As RadioButton
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents FilterByItemsRadioButton As RadioButton
-    Friend WithEvents MenuStrip1 As MenuStrip
+    Friend WithEvents StansGroceryMenuStrip As MenuStrip
     Friend WithEvents FileToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SearchToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents HelpToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AboutToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents StansGroceryContextMenuStrip As ContextMenuStrip
+    Friend WithEvents SearchToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents ExitToolStripMenuItem1 As ToolStripMenuItem
 End Class
