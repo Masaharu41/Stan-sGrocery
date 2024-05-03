@@ -58,22 +58,24 @@ Partial Class StansGrocery
         '
         'SearchButton
         '
+        Me.SearchButton.BackColor = System.Drawing.Color.YellowGreen
         Me.SearchButton.Cursor = System.Windows.Forms.Cursors.Hand
         Me.SearchButton.Location = New System.Drawing.Point(533, 229)
         Me.SearchButton.Name = "SearchButton"
         Me.SearchButton.Size = New System.Drawing.Size(148, 77)
         Me.SearchButton.TabIndex = 1
         Me.SearchButton.Text = "Search"
-        Me.SearchButton.UseVisualStyleBackColor = True
+        Me.SearchButton.UseVisualStyleBackColor = False
         '
         'StoreLabel
         '
         Me.StoreLabel.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.StoreLabel.AutoSize = True
-        Me.StoreLabel.Font = New System.Drawing.Font("Liberation Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.StoreLabel.Location = New System.Drawing.Point(514, 126)
+        Me.StoreLabel.BackColor = System.Drawing.Color.YellowGreen
+        Me.StoreLabel.Font = New System.Drawing.Font("Liberation Serif", 18.0!)
+        Me.StoreLabel.Location = New System.Drawing.Point(465, 126)
         Me.StoreLabel.Name = "StoreLabel"
-        Me.StoreLabel.Size = New System.Drawing.Size(199, 36)
+        Me.StoreLabel.Size = New System.Drawing.Size(300, 53)
         Me.StoreLabel.TabIndex = 2
         Me.StoreLabel.Text = "Stan's Grocery"
         '
@@ -82,17 +84,20 @@ Partial Class StansGrocery
         Me.DisplayListBox.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DisplayListBox.BackColor = System.Drawing.Color.YellowGreen
+        Me.DisplayListBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.DisplayListBox.FormattingEnabled = True
-        Me.DisplayListBox.ItemHeight = 25
+        Me.DisplayListBox.ItemHeight = 31
         Me.DisplayListBox.Location = New System.Drawing.Point(12, 409)
         Me.DisplayListBox.Name = "DisplayListBox"
-        Me.DisplayListBox.Size = New System.Drawing.Size(1179, 279)
+        Me.DisplayListBox.Size = New System.Drawing.Size(1179, 252)
         Me.DisplayListBox.TabIndex = 3
         '
         'DisplayLabel
         '
         Me.DisplayLabel.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DisplayLabel.AutoSize = True
+        Me.DisplayLabel.BackColor = System.Drawing.Color.YellowGreen
         Me.DisplayLabel.Location = New System.Drawing.Point(427, 325)
         Me.DisplayLabel.Name = "DisplayLabel"
         Me.DisplayLabel.Size = New System.Drawing.Size(58, 25)
@@ -135,6 +140,7 @@ Partial Class StansGrocery
         'GroupBox1
         '
         Me.GroupBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox1.BackColor = System.Drawing.Color.YellowGreen
         Me.GroupBox1.Controls.Add(Me.FilterByItemsRadioButton)
         Me.GroupBox1.Controls.Add(Me.FilterByCategoryRadioButton)
         Me.GroupBox1.Controls.Add(Me.ShowAllRadioButton)
@@ -164,7 +170,7 @@ Partial Class StansGrocery
         Me.StansGroceryMenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.HelpToolStripMenuItem})
         Me.StansGroceryMenuStrip.Location = New System.Drawing.Point(0, 0)
         Me.StansGroceryMenuStrip.Name = "StansGroceryMenuStrip"
-        Me.StansGroceryMenuStrip.Size = New System.Drawing.Size(1203, 40)
+        Me.StansGroceryMenuStrip.Size = New System.Drawing.Size(1203, 48)
         Me.StansGroceryMenuStrip.TabIndex = 9
         Me.StansGroceryMenuStrip.Text = "MenuStrip1"
         '
@@ -172,7 +178,7 @@ Partial Class StansGrocery
         '
         Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SearchToolStripMenuItem, Me.ExitToolStripMenuItem})
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
-        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(71, 44)
+        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(71, 40)
         Me.FileToolStripMenuItem.Text = "File"
         '
         'SearchToolStripMenuItem
@@ -191,7 +197,7 @@ Partial Class StansGrocery
         '
         Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AboutToolStripMenuItem})
         Me.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
-        Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(84, 44)
+        Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(84, 40)
         Me.HelpToolStripMenuItem.Text = "Help"
         '
         'AboutToolStripMenuItem
@@ -223,6 +229,8 @@ Partial Class StansGrocery
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1203, 700)
         Me.ContextMenuStrip = Me.StansGroceryContextMenuStrip
         Me.Controls.Add(Me.GroupBox1)
