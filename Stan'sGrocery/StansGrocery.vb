@@ -207,4 +207,5 @@ Public Class StansGrocery
         Me.Hide()
         AboutForm.Show()
     End Sub
+
 End Class

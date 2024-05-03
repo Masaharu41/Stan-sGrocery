@@ -79,6 +79,12 @@
     <Compile Include="AboutForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="StansSplashForm.Designer.vb">
+      <DependentUpon>StansSplashForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="StansSplashForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="StansGrocery.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +121,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StansSplashForm.resx">
+      <DependentUpon>StansSplashForm.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
