@@ -22,23 +22,25 @@ Partial Class AboutForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AboutForm))
+        Me.AboutLabel = New System.Windows.Forms.Label()
         Me.AboutButton = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
-        'Label1
+        'AboutLabel
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(12, 9)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(466, 75)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Welcome to Stan's Grocery" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "This search engine has been developed to give" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "our cus" &
-    "tomers greater convience "
+        Me.AboutLabel.AutoSize = True
+        Me.AboutLabel.BackColor = System.Drawing.Color.LightGray
+        Me.AboutLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.AboutLabel.Location = New System.Drawing.Point(28, 55)
+        Me.AboutLabel.Name = "AboutLabel"
+        Me.AboutLabel.Size = New System.Drawing.Size(466, 150)
+        Me.AboutLabel.TabIndex = 0
+        Me.AboutLabel.Text = resources.GetString("AboutLabel.Text")
         '
         'AboutButton
         '
-        Me.AboutButton.Location = New System.Drawing.Point(581, 328)
+        Me.AboutButton.Location = New System.Drawing.Point(326, 243)
         Me.AboutButton.Name = "AboutButton"
         Me.AboutButton.Size = New System.Drawing.Size(152, 61)
         Me.AboutButton.TabIndex = 1
@@ -49,9 +51,10 @@ Partial Class AboutForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.ClientSize = New System.Drawing.Size(577, 343)
         Me.Controls.Add(Me.AboutButton)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.AboutLabel)
         Me.Name = "AboutForm"
         Me.Text = "Form1"
         Me.ResumeLayout(False)
@@ -59,6 +62,6 @@ Partial Class AboutForm
 
     End Sub
 
-    Friend WithEvents Label1 As Label
+    Friend WithEvents AboutLabel As Label
     Friend WithEvents AboutButton As Button
 End Class

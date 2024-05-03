@@ -3,4 +3,5 @@
         Me.Hide()
         StansGrocery.Show()
     End Sub
+
 End Class
